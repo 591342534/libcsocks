@@ -10,6 +10,10 @@
 #include <math.h>
 #include <inttypes.h>
 
+#ifdef BUILDLIB
+#include "libspecifics.h"
+#endif
+
 #define BUFLEN 8192
 #define PBLEN 4096
 #define SIGNLENGTH 6
@@ -25,10 +29,6 @@
 	typedef uint16_t WORD;
 	typedef uint8_t BYTE;
 #endif
-
-
-int DEBUG_conns;
-DWORD pks;
 
 struct sockserver;
 struct serverclient;
@@ -90,7 +90,6 @@ typedef struct clientconn {
 	unsigned char listening;
 	HANDLE lmt;
 	HANDLE lt;
-	//Add function pointers here
 	char buffer_in[PBLEN];
 	char buffer_out[PBLEN];
 	int biData;

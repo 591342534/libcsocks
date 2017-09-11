@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../csocks/csocks.h"
+#include "../csocks/headers/csocks.h"
 char* msg = "I agree.\n";
 int ListenerAction(CLIENTCONN* sc)
 {
